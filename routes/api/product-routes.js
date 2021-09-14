@@ -15,8 +15,7 @@ router.get('/', (req, res) => {
         attributes: ['id', 'category_name'], 
       },
       {
-        model: Tag,
-        attributes: {exclude: ["tags[0].product_tag.tagId", "tags[0].product_tag.productId"]}
+        model: Tag
       }
     ]
   })
