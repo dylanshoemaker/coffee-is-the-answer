@@ -1,3 +1,4 @@
+const sequelize = require("../../config/connection");
 const router = require('express').Router();
 const { Tag, Product, ProductTag } = require('../../models');
 
@@ -5,7 +6,14 @@ const { Tag, Product, ProductTag } = require('../../models');
 
 router.get('/', (req, res) => {
   // find all tags
-  Tag.findAll()
+  Tag.findAll({
+    attributes: [
+      'id',
+      'tag_name',
+      [sequelize.literal('(SELECT * FROM product WHERE tag.id = tags.product_tag.tag_id)'), 'tagged_products']
+    ]
+    
+  })
     .then((dbTagData) => res.json(dbTagData))
     .catch((err) => {
       console.log(err);
