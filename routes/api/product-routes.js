@@ -16,10 +16,14 @@ router.get('/', (req, res) => {
       },
       {
         model: Tag,
+        attributes: {exclude: ["tags[0].product_tag.tagId", "tags[0].product_tag.productId"]}
       }
     ]
   })
-    .then((dbProductData) => res.json(dbProductData))
+    .then((dbProductData) => {
+      //console.log(dbProductData[0].dataValues.tags[0]);
+      res.json(dbProductData)
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -37,14 +41,17 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Category,
-        attributes: ['id', 'category_name'], 
+         
       },
       {
         model: Tag,
+        
       }
     ]
   })
-    .then((dbProductData) => res.json(dbProductData))
+    .then((dbProductData) => {
+    res.json(dbProductData)
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
