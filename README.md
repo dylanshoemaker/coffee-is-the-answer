@@ -22,8 +22,8 @@ while using the dotenv package to use environment variables to store sensitive d
 - Start the application by typing node app.js in the command line, make sure you are in the root folder of the directory
 
 # Usage
+[Walkthrough](https://drive.google.com/file/d/1HitA6yxDjIwljanOktbJO5cWswUJPF5D/vie)
 
-![walkthrough](./images/coffee-is-the-answer-walkthrough.gif) 
 
 # License
 
