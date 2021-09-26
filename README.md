@@ -16,7 +16,7 @@ while using the dotenv package to use environment variables to store sensitive d
 
 # Installation 
 - Clone the repo to your local machine.
-- Navigate to the root folder and run "npm install" to install the necisary packages
+- Navigate to the root folder and run "npm install" to install the necessary packages
 - Use [MySQL Workbench](https://www.mysql.com/products/workbench/), or whatever you prefer as your sql workbench, to create a database or you are welcome to use the seed files   by typing npm run seed in the command line 
 - Create a .env file in the root folder to store your username and password for mysql Example: DB_USER=root  DB_PASS=Password
 - Start the application by typing node app.js in the command line, make sure you are in the root folder of the directory
